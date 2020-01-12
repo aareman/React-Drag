@@ -28,9 +28,9 @@ export default class Draggable extends React.Component<DraggableProps> {
 
         this.style = props.style || {};
         this.style.position = "absolute";
-        this.style.backgroundColor = this.style.backgroundColor || "green";
-        this.style.width = 100;
-        this.style.height = 100;
+        // this.style.backgroundColor = this.style.backgroundColor || "green";
+        // this.style.width = 100;
+        // this.style.height = 100;
 
         this.item = props.item || null;
         if (this.item) {

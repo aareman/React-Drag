@@ -7,9 +7,9 @@ export default class DragSurface extends React.Component {
         this.nodeRef = React.createRef();
         this.style = props.style || {};
         this.style.position = "absolute";
-        this.style.backgroundColor = this.style.backgroundColor || "green";
-        this.style.width = 100;
-        this.style.height = 100;
+        // this.style.backgroundColor = this.style.backgroundColor || "green";
+        // this.style.width = 100;
+        // this.style.height = 100;
         this.surface = props.item || null;
         if (this.surface) {
             this.surface.className = this.surface.className || "*";
