@@ -74,10 +74,10 @@ export default class ReactDragManager {
     }
     initiateDragEndedEvent() {
         const currentDragItem = this.draggableItems.get(this.currentDragNode);
-        const currentDragSurface = this.dragSurfaces.get(this.currentSurfaceNode);
         if (!currentDragItem) {
             return;
         }
+        const currentDragSurface = this.dragSurfaces.get(this.currentSurfaceNode);
         let classesToFire;
         if (!currentDragSurface) {
             classesToFire = currentDragItem.className.split(" ");
@@ -85,7 +85,6 @@ export default class ReactDragManager {
         else {
             classesToFire = getCommonClasses(currentDragItem.className, currentDragSurface.className);
         }
-        console.log("classes to fire, event end", classesToFire);
         if (classesToFire.length) {
             classesToFire.forEach(className => {
                 this.triggerEvent(DRAG_ENDED, className, currentDragItem, currentDragSurface);
@@ -123,7 +122,7 @@ export default class ReactDragManager {
         if (listeners) {
             // console.log(listeners);
             listeners.forEach(listener => {
-                listener(this.currentDragNode, this.currentSurfaceNode);
+                listener(currentDragItem, currentDragSurface);
             });
         }
     }
