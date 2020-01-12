@@ -1,6 +1,6 @@
 {
     "name": "@darthbane/react-drag",
-    "version": "0.9.13",
+    "version": "0.9.14",
     "description": "A libraray for drag and drop with react.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
