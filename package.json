@@ -1,0 +1,16 @@
+{
+    "name": "@darthbane/react-drag",
+    "version": "0.9.12",
+    "description": "A libraray for drag and drop with react.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Moshe Boord",
+    "license": "MIT",
+    "dependencies": {
+        "@types/react": "^16.9.17",
+        "react": "^16.12.0"
+    }
+}
