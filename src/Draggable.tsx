@@ -1,11 +1,11 @@
-import React, { ReactNode, ReactChild } from "react";
+import React, { ReactNode } from "react";
 import ReactDragManager, { getDefaultManager } from "./ReactDragManager";
 
 const manager = getDefaultManager();
 
 export type DraggableItem = {
     className: String;
-    data?: Object;
+    data?: { [prop: string]: any };
 };
 
 type DraggableProps = {
@@ -28,9 +28,9 @@ export default class Draggable extends React.Component<DraggableProps> {
 
         this.style = props.style || {};
         this.style.position = "absolute";
-        // this.style.backgroundColor = this.style.backgroundColor || "green";
-        // this.style.width = 100;
-        // this.style.height = 100;
+        this.style.backgroundColor = this.style.backgroundColor || "green";
+        this.style.width = 100;
+        this.style.height = 100;
 
         this.item = props.item || null;
         if (this.item) {
@@ -54,10 +54,10 @@ export default class Draggable extends React.Component<DraggableProps> {
     }
 
     render() {
-        let { style, children, nodeRef } = this;
+        let { style, children } = this;
 
         return (
-            <div style={style} ref={nodeRef}>
+            <div style={style} ref={this.nodeRef}>
                 {children}
             </div>
         );

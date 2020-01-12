@@ -2,7 +2,9 @@ import React, { ReactNode } from "react";
 import ReactDragManager from "./ReactDragManager";
 export declare type DragSurfaceItem = {
     className: String;
-    data?: Object;
+    data?: {
+        [prop: string]: any;
+    };
 };
 declare type DragSurfaceProps = {
     item?: DragSurfaceItem;

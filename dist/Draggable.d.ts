@@ -2,7 +2,9 @@ import React, { ReactNode } from "react";
 import ReactDragManager from "./ReactDragManager";
 export declare type DraggableItem = {
     className: String;
-    data?: Object;
+    data?: {
+        [prop: string]: any;
+    };
 };
 declare type DraggableProps = {
     item?: DraggableItem;

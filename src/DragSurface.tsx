@@ -5,7 +5,7 @@ const manager = getDefaultManager();
 
 export type DragSurfaceItem = {
     className: String;
-    data?: Object;
+    data?: { [prop: string]: any };
 };
 
 type DragSurfaceProps = {
@@ -28,9 +28,9 @@ export default class DragSurface extends React.Component<DragSurfaceProps> {
 
         this.style = props.style || {};
         this.style.position = "absolute";
-        // this.style.backgroundColor = this.style.backgroundColor || "green";
-        // this.style.width = 100;
-        // this.style.height = 100;
+        this.style.backgroundColor = this.style.backgroundColor || "green";
+        this.style.width = 100;
+        this.style.height = 100;
 
         this.surface = props.item || null;
         if (this.surface) {
@@ -54,10 +54,10 @@ export default class DragSurface extends React.Component<DragSurfaceProps> {
     }
 
     render() {
-        let { style, children, nodeRef } = this;
+        let { style, children } = this;
 
         return (
-            <div style={style} ref={nodeRef}>
+            <div style={style} ref={this.nodeRef}>
                 {children}
             </div>
         );
